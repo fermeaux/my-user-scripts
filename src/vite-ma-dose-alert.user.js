@@ -8,6 +8,8 @@
 // ==/UserScript==
 
 let canCheck = true
+const audio = new Audio()
+audio.src = 'http://noproblo.dayjo.org/ZeldaSounds/OOT/OOT_Get_SmallItem2.wav'
 
 setInterval(() => {
   const appRoot = document.querySelector('vmd-app').shadowRoot
@@ -17,8 +19,6 @@ setInterval(() => {
     const firstCardRoot = pageRoot.querySelector('vmd-appointment-card').shadowRoot
     if (firstCardRoot.textContent.includes('Chronodoses disponibles')) {
       console.log('found a slot')
-      const audio = new Audio()
-      audio.src = 'https://wow.zamimg.com/sound-ids/live/enus/71/558663'
       audio.play()
     }
     canCheck = false
